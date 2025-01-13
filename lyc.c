@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-int	lyc(int year)
+char	*lyc(int year)
 {
-	int res;
-
-	res = 0;
-	if ((year / 4) || ((year / 4) && (year / 400)))
-	{
-		printf("Leap Year.");
-	}
+	if ((year % 4 == 0) || ((year % 4 == 0) && (year % 400 == 0)))
+		printf("Leap Year.\n");
 	else
-		printf("Not a Leap Year.")
+		printf("Not a Leap Year.\n");
+	return (NULL);
+}
+
+int main(void)
+{
+	printf("%s", lyc(1904));
 	return (0);
 }
